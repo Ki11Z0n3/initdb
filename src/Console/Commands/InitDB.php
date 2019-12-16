@@ -42,8 +42,8 @@ class InitDB extends Command
     public function handle()
     {
         $this->call('database:create');
-        $this->call('migrate', ['--path' => '/vendor/ebarriosbloonde/usersandprivileges/database/migrations']);
-        $this->call('migrate', ['--path' => '/vendor/bloonde/ws-seo-configuration/database/migrations']);
+//        $this->call('migrate', ['--path' => '/vendor/ebarriosbloonde/usersandprivileges/database/migrations']);
+//        $this->call('migrate', ['--path' => '/vendor/bloonde/ws-seo-configuration/database/migrations']);
         $this->call('migrate');
         if($this->argument('seed') && $this->argument('seed') == 'seed'){
             $this->call('db:seed', ['--class' => 'DatabaseSeeder']);
