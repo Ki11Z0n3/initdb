@@ -1,0 +1,10 @@
+{
+    "name": "initdb/javiermanga",
+    "authors": [
+        {
+            "name": "Javier Manga",
+            "email": "jmangabloonde@gmail.com"
+        }
+    ],
+    "require": {}
+}
