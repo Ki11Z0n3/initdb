@@ -1,5 +1,8 @@
 {
     "name": "initdb/javiermanga",
+    "version": "1.0.0",
+    "description": "U",
+    "type": "library",
     "authors": [
         {
             "name": "Javier Manga",
