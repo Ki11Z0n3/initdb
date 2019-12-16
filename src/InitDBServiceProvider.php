@@ -8,7 +8,7 @@ use JaviManga\InitDB\Console\Commands\DropDB;
 use JaviManga\InitDB\Console\Commands\InitDB;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelInitDBServiceProvider extends ServiceProvider
+class InitDBServiceProvider extends ServiceProvider
 {
     public function boot()
     {
