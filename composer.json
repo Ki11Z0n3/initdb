@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "JaviMaga\\InitDB\\": "vendor/javimanga/initdb/src"
+      "JaviManga\\InitDB\\": "vendor/javimanga/initdb/src"
     }
   }
 }
