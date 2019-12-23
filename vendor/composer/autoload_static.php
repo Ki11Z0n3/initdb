@@ -9,9 +9,9 @@ class ComposerStaticInit117f06d08f37bb6e0bd57cdaeb980bfd
     public static $prefixesPsr0 = array (
         'J' => 
         array (
-            'JaviManga/InitDB' => 
+            'JaviManga\\InitDB\\' => 
             array (
-                0 => __DIR__ . '/../..' . '/src',
+                0 => __DIR__ . '/..' . '/javimanga/initdb/src',
             ),
         ),
     );
