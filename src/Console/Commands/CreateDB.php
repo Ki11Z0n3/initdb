@@ -42,8 +42,8 @@ class CreateDB extends Command
      */
     public function handle()
     {
-        Artisan::call('config:clear');
         try {
+            Artisan::call('config:clear');
             if($this->argument('name')){
                 $database = $this->argument('name');
                 $pdo = $this->getPDOConnection(env('DB_HOST'), env('DB_PORT'), env('DB_USERNAME'), env('DB_PASSWORD'));
@@ -54,8 +54,8 @@ class CreateDB extends Command
                 $pdo->exec('CREATE DATABASE IF NOT EXISTS ' . $database);
             }
             $this->info('Se ha creado la base de datos ' . $database);
-        } catch (PDOException $exception) {
-            $this->error('Error al crear la base de datos: ' . $database . ' / ' . $exception->getMessage());
+        } catch (\Exception $e) {
+            $this->error('Error al crear la base de datos: ' . $database . ' / ' . $e->getMessage());
         }
     }
 

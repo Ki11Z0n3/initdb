@@ -40,8 +40,8 @@ class DropDB extends Command
      */
     public function handle()
     {
-        Artisan::call('config:clear');
         try {
+            Artisan::call('config:clear');
             if($this->argument('name')){
                 $database = $this->argument('name');
                 $pdo = $this->getPDOConnection(env('DB_HOST'), env('DB_PORT'), env('DB_USERNAME'), env('DB_PASSWORD'));
@@ -52,8 +52,8 @@ class DropDB extends Command
                 $pdo->exec('DROP DATABASE IF EXISTS ' . $database);
             }
             $this->info('Se ha borrado la base de datos ' . $database);
-        } catch (PDOException $exception) {
-            $this->error('Error al borrar la base de datos: ' . $database . ' / ' . $exception->getMessage());
+        } catch (\Exception $e) {
+            $this->error('Error al borrar la base de datos: ' . $database . ' / ' . $e->getMessage());
         }
     }
 
