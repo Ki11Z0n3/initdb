@@ -1,7 +1,7 @@
 {
   "name": "javimanga/initdb",
   "version": "1.0.0",
-  "description": "U",
+  "description": "Package that helps with a series of commands to create, delete, and clone a database.",
   "type": "library",
   "license": "MIT",
   "authors": [
