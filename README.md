@@ -1,5 +1,7 @@
 **InitDB**
 -
+Package that helps with a series of commands to create, delete, and clone a database.
+
 Install InitDB:
 ~~~~
 $ composer require javimanga/initdb
