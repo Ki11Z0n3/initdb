@@ -13,8 +13,8 @@
     "php": ">=7.2"
   },
   "autoload": {
-    "psr-0": {
-      "javimanga/initdb": "src/"
+    "psr-4": {
+      "JaviMaga\\InitDB\\": "vendor/javimanga/initdb/src"
     }
   }
 }
