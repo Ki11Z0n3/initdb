@@ -44,13 +44,15 @@ class CloneDB extends Command
         try{
             Artisan::call('config:clear');
             $database = env('DB_DATABASE');
+            $newDatabase = ($this->argument('new_name')) ? $this->argument('new_name') : $database . '_copy';
             $pdo = $this->getPDOConnection(env('DB_HOST'), env('DB_PORT'), env('DB_USERNAME'), env('DB_PASSWORD'));
-            $pdo->exec('CREATE DATABASE IF NOT EXISTS ' . ($this->argument('new_name')) ? $this->argument('new_name') : $database . '_copy');
+            $pdo->exec('CREATE DATABASE IF NOT EXISTS ' . $newDatabase);
             $result = $pdo->query('SELECT TABLE_NAME AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = \'' . $database . '\'');
             foreach ($result->fetchAll() as $table) {
-                $pdo->exec('USE ' . $this->argument('new_name'));
+                $pdo->exec('USE ' . $newDatabase);
                 $pdo->exec('CREATE TABLE ' . $table['name'] . ' SELECT * FROM ' . $database . '.' . $table['name']);
             }
+            $this->info('Se ha clonado la base de datos ' . $database . ' en ' . $newDatabase);
         } catch (\Exception $e) {
             $this->error('Error al clonar la base de datos: ' . $database . ' / ' . $e->getMessage());
         }
