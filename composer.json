@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "U",
   "type": "library",
+  "license": "Ki11Z0n3",
   "authors": [
     {
       "name": "Javier Manga",
@@ -13,8 +14,6 @@
     "php": ">=7.2"
   },
   "autoload": {
-    "psr-0": {
-      "JaviManga\\InitDB\\": "vendor/javimanga/initdb/src"
-    }
+    "psr-4": {"JaviManga\\InitDB\\": "src/"}
   }
 }
